@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+<div class="product-container">
+    <div class="product-menu">
+        <a href="{% url 'add_products' %}">Add Product</a>
+    </div>
+    <div class="product-content">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>Product</th>
+                    <th>Status</th>
+                    <th>Inventory</th>
+                    <th>Sales Channels</th>
+                    <th>Markets</th>
+                    <th>Cateogry</th>
+                    <th>Vendor</th>
+                </tr>
+                {% for product in products %}
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>{{product.name}}</th>
+                    <th>Status</th>
+                    <th>Inventory</th>
+                    <th>Sales Channels</th>
+                    <th>Markets</th>
+                    <th>Cateogry</th>
+                    <th>Vendor</th>
+                </tr>
+                {% endfor %}
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</div>
+
+
+{% endblock main %}

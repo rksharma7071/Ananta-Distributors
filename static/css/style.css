@@ -5,6 +5,8 @@
     --dark: #282C35;
     --light1: #ffffff;
     --light2: #f5f5f5;
+    --full-width:100%;
+    --mid-width:1400px;
 }
 
 * {
@@ -49,25 +51,7 @@ header {
     display: block;
     color: var(--light1);
     border-radius: 7px;
-    animation-name: header_glow;
-    animation-duration: 1s;
-}
-
-@keyframes header_glow {
-    0% {
-        background-color: none;
-        color: var(--dark);
-    }
-
-    50% {
-        color: var(--light1);
-        background-color: var(--main);
-    }
-
-    100% {
-        color: var(--light1);
-        background-color: var(--main);
-    }
+    background-color: var(--main);
 
 }
 
@@ -144,4 +128,29 @@ header {
 
 .border{
     border: 2px solid black;
+}
+
+
+.product-container{
+    border: 2px solid black;
+    margin:auto;
+    display: flex;
+}
+
+.product-menu{
+    border: 2px solid black;
+    width:200px;
+    padding: 20px;
+}
+.product-content{
+    border: 2px solid black;
+    width:100%;
+}
+
+table, tr, td, th
+{
+    width: 100%;
+    border: 1px solid black;
+    table-layout: fixed;
+    border-collapse: collapse;
 }

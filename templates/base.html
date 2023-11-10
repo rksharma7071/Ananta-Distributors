@@ -20,44 +20,22 @@
 
     <header>
         <div class="logo">
-            <a href="">ANANTA DISTRIBUTORS</a>
+            <a href="{% url 'home' %}">ANANTA DISTRIBUTORS</a>
         </div>
         <div class="menu"  onclick="menu_click()"><i class="fa-solid fa-bars"></i></div>
         <ul class="nav" id="nav">
-            <li class="nav-link"><a href="#">Home</a></li>
-            <li class="nav-link"><a href="#">Product</a></li>
-            <li class="nav-link"><a href="#">New Arrivals</a></li>
-            <li class="nav-link"><a href="#">Catalogue</a></li>
-            <li class="nav-link"><a href="#">About Us</a></li>
-            <li class="nav-link"><a href="#">Blog</a></li>
-            <li class="nav-link"><a href="#">Contact Us</a></li>
+            <li class="nav-link"><a href="{% url 'home' %}">Home</a></li>
+            <li class="nav-link"><a href="{% url 'products' %}">Product</a></li>
+            <li class="nav-link"><a href="{% url 'new_arrivals' %}">New Arrivals</a></li>
+            <li class="nav-link"><a href="{% url 'collections' %}">Catalogue</a></li>
+            <li class="nav-link"><a href="{% url 'about_us' %}">About Us</a></li>
+            <li class="nav-link"><a href="{% url 'blog' %}">Blog</a></li>
+            <li class="nav-link"><a href="{% url 'contact_us' %}">Contact Us</a></li>
         </ul>
-        
     </header>
-    <section class="image-slider">
-        <div class="image-container">
-            <div class="slide">
-                <img src="{% static 'image/New Project.jpg' %}" alt="">
-            </div>
-            <div class="slide">
-                <img src="{% static 'image/New Project.jpg' %}" alt="">
-            </div>
-            <div class="slide">
-                <img src="{% static 'image/New Project.jpg' %}" alt="">
-            </div>
-        </div>
-    </section>
 
-    <section class="image-with-text">
-        <div class="image-text-container">
-            <img src="{% static 'image/demo1.jpg' %}" alt="demo01">
-        </div>
-        <div class="text-container">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur neque praesentium repellendus iusto expedita sint tempora perspiciatis officiis doloribus ex harum amet ullam consectetur enim provident, architecto dicta consequuntur, ipsum saepe illum minus, ea unde! Ullam ratione omnis, qui numquam assumenda repellat corrupti nobis, soluta est corporis optio nam explicabo.</p>
-        </div>
-    </section>
-
+    {% block main %}{% endblock main %}
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
