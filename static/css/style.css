@@ -32,7 +32,7 @@ header {
 
 .logo a {
     font-size: 1.4em;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 .nav {
@@ -41,7 +41,7 @@ header {
 }
 
 .nav .nav-link a {
-    padding: 10px 20px;
+    padding: 10px 12px;
     display: block;
     text-transform: uppercase;
     font-size: 0.9em;
@@ -54,6 +54,44 @@ header {
     background-color: var(--main);
 
 }
+.menu-icons a{
+    padding: 10px;
+}
+.collection-container{
+    width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+}
+.collection-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.slide{
+    margin: 15px;
+    /* border-radius: 50%; */
+    overflow: hidden;
+}
+
+.custom-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    max-width: 1200px;
+    gap: 10px;
+    margin: 20px auto;
+}
+.cus-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cus-box1{
+    grid-column: 1/ span 2;
+    grid-row: 1/ span 2;
+    height: 600px;
+}
+
 
 .image-slider {
     height: auto;
@@ -75,7 +113,6 @@ header {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    border-radius: 15px;
     overflow: hidden;
 }
 .image-text-container{
