@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+<div class='signin-container'>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Login Form</h2>
+        <div class="signin-user">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" >
+        </div>
+        <div class="signin-pass">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" >
+        </div>
+        <div class="signin-btn">
+            <input type="submit" value="Sign In">
+        </div>
+    </form>
+</div>
+
+{% endblock main %}

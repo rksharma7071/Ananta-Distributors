@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+Login User ID - <strong>{{request.user}}</strong><br/>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock main %}

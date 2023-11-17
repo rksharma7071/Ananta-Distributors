@@ -11,4 +11,7 @@ urlpatterns = [
     path('about_us/', view_about_us, name="about_us"),
     path('blog/', view_blog, name="blog"),
     path('contact_us/', view_contact_us, name="contact_us"),
+    path('signin/', view_signin, name="signin"),
+    path('dashboard/', view_dashboard, name="dashboard"),
+    path('logout/', view_logout, name="logout"),
 ]

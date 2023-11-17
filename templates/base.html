@@ -20,7 +20,9 @@
 
     <header>
         <div class="logo">
-            <a href="{% url 'home' %}">ANANTA DISTRIBUTORS</a>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'image/logo1.png' %}" alt="Ananta Distributors">
+            </a>
         </div>
         <div class="menu"  onclick="menu_click()"><i class="fa-solid fa-bars"></i></div>
         <ul class="nav" id="nav">
@@ -34,7 +36,7 @@
         </ul>
         <div class="menu-icons">
             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="{% url 'signin' %}"><i class="fa-regular fa-user"></i></a>
             <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
         </div>
     </header>
