@@ -1,4 +1,37 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} 
 
-{% block main %}Add Product{% endblock main %}
+{% load static %} 
+
+{% block stylesheet %}
+    input[type='text'],
+    input[type='number'],
+    select{
+        font-size:13px;
+        height:30px;
+    }
+    input[type='text']{
+        font-size:13px;
+
+    }
+{% endblock stylesheet %}
+
+
+{% block main %}
+
+<div class="add-product-form" style='width:600px; margin:auto; font-size:13px;'>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+    <div style="min-height:71px;">
+        <label for='{{field.id_for_label}}'>{{field.label_tag}}</label>
+        <span style="color:red;">{{field.errors}}</span>
+        {{field}}
+    </div>
+        {% endfor %}
+    <div>
+      <input type="submit" value='Submit'/>
+    </div>
+  </form>
+</div>
+
+{% endblock main %}

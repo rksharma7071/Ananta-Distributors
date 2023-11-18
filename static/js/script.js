@@ -1,3 +1,7 @@
+window.addEventListener("load", () => {
+    document.querySelector(".loader").classList.add("loader--hidden")
+});
+
 $(document).ready(function () {
     $('.image-container').slick({
         infinite: true,   

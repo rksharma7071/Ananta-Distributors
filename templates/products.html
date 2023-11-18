@@ -1,35 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block stylesheet %}
+td, th{
+    padding:5px;
+}
+{% endblock stylesheet %}
 {% block main %}
 
 <div class="product-container">
-    <div class="product-menu">
+    {% comment %} <div class="product-menu">
         <a href="{% url 'add_products' %}">Add Product</a>
-    </div>
+    </div> {% endcomment %}
     <div class="product-content">
         <table border="1">
             <thead>
                 <tr>
-                    <th><input type="checkbox"></th>
-                    <th>Product</th>
-                    <th>Status</th>
-                    <th>Inventory</th>
-                    <th>Sales Channels</th>
-                    <th>Markets</th>
-                    <th>Cateogry</th>
-                    <th>Vendor</th>
+                    <th>S.No.</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Compare At Price</th>
+                    <th>Quantity</th>
+                    <th>Varient</th>
+                    <th>Meta Data</th>
+                    <th>Category</th>
+                    <th>Product Type</th>
+                    <th>Vender</th>
+                    <th>Collections</th>
+                    <th>Tags</th>
                 </tr>
                 {% for product in products %}
                 <tr>
-                    <th><input type="checkbox"></th>
-                    <th>{{product.name}}</th>
-                    <th>Status</th>
-                    <th>Inventory</th>
-                    <th>Sales Channels</th>
-                    <th>Markets</th>
-                    <th>Cateogry</th>
-                    <th>Vendor</th>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.price }}</td>
+                    <td>{{product.compare_at_price }}</td>
+                    <td>{{product.quantity }}</td>
+                    <td>{{product.varient }}</td>
+                    <td>{{product.meta_data }}</td>
+                    <td>{{product.category }}</td>
+                    <td>{{product.pro_type }}</td>
+                    <td>{{product.vender }}</td>
+                    <td>{{product.collectios }}</td>
+                    <td>{{product.tags }}</td>
                 </tr>
                 {% endfor %}
             </thead>

@@ -27,17 +27,17 @@ class Tags(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    media = models.ForeignKey(Media, on_delete=models.CASCADE)
+    media = models.ForeignKey(Media, on_delete=models.CASCADE, null=True, blank=True)
     price = models.IntegerField()
     compare_at_price = models.IntegerField()
     quantity = models.IntegerField()
-    varient = models.ForeignKey(Varient, on_delete=models.CASCADE)
-    meta_data = models.ForeignKey(Meta_Data, on_delete=models.CASCADE)
+    varient = models.ForeignKey(Varient, on_delete=models.CASCADE, null=True, blank=True)
+    meta_data = models.ForeignKey(Meta_Data, on_delete=models.CASCADE, null=True, blank=True)
     category = models.CharField(max_length=50)
     pro_type = models.CharField(max_length=50)
     vender = models.CharField(max_length=50)
-    collections = models.ForeignKey(Collection, on_delete=models.CASCADE)
-    tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
+    collections = models.ForeignKey(Collection, on_delete=models.CASCADE, null=True, blank=True)
+    tags = models.ForeignKey(Tags, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title

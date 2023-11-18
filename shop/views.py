@@ -1,21 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 
 def view_home(request):
     return render(request, 'home.html', locals())
-
-
-def view_products(request):
-    products = Product.objects.all()
-    return render(request, 'products.html', locals())
-
-
-def view_add_product(request):
-    products = Product.objects.all()
-    return render(request, 'add_product.html', locals())
 
 
 def view_new_arrivals(request):
@@ -39,6 +30,9 @@ def view_contact_us(request):
 
 
 def view_signin(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -48,13 +42,39 @@ def view_signin(request):
             login(request, user)
             return redirect('dashboard')
         else:
-            pass
+            return redirect('signin')
     return render(request, "signin.html",locals())
 
 
+
 def view_dashboard(request):
+    if not request.user.is_authenticated:
+        return redirect('signin')
+
     return render(request, 'dashboard.html', locals())
 
 def view_logout(request):
+    if not request.user.is_authenticated:
+        return redirect('signin')
+
     logout(request)
     return redirect('home')
+
+
+def view_products(request):
+    products = Product.objects.all()
+    return render(request, 'products.html', locals())
+
+
+def view_add_product(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            cleaned_data = form.cleaned_data
+            Product.objects.create(**cleaned_data)
+            return redirect('add_products')
+    else:
+        form = ProductForm()
+
+    return render(request, 'add_product.html', locals())
+
